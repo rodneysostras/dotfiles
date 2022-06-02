@@ -2,7 +2,7 @@
 
 Docker Nativo que roda no ambiente linux totalmente suportado pela WSL2.
 
-> Veja este [tutorial](../README.md#Para-habilitar-o-WSL) para saber como utilizar uma distribuição linux no WSL.
+> Veja este [tutorial](../README.md#-para-habilitar-o-wsl) para saber como utilizar uma distribuição linux no WSL.
 
 ### Vantagens
 - Consumo mínimo de memória para rodar Docker Daemon (Servidor Docker)
