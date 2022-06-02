@@ -18,4 +18,5 @@ Isso nasceu a muito tempo e veio para facilitar nossa vida, nesse repositório p
 - [Windows WSL2](./windows/wsl2/)
 
 ## Tutorial de ferramentas
-- [WSL2 com Ubuntu + Docker Native](./windows/wsl2/docker/)
+- [WSL2 com Ubuntu](./Windows/wsl2/README.md#-para-habilitar-o-wsl)
+- [WSL2 com Docker Native](./windows/wsl2/docker/)
