@@ -2,7 +2,7 @@
 
 Docker Nativo que roda no ambiente linux totalmente suportado pela WSL2.
 
-> Veja este [tutorial](../README.md#-para-habilitar-o-wsl) para saber como utilizar uma distribuição linux no WSL.
+> Veja este [tutorial](./wsl2-ubuntu.md) para saber como utilizar uma distribuição linux no WSL.
 
 ### Vantagens
 - Consumo mínimo de memória para rodar Docker Daemon (Servidor Docker)
@@ -82,7 +82,7 @@ docker version
 docker-compose version
 ```
 
-![docker version](./ubuntu-docker-native.png)
+![docker version](./assets/img/ubuntu-docker-native.png)
 
 Para executar o Daemon do Docker automaticamente ao iniciar realize instruções abaixo.
 
@@ -126,5 +126,56 @@ Para testar você pode execute o comando no terminal do Ubuntu.
 ```bash
 docker run hello-world
 ```
-![docker hello world](./ubuntu-docker-hello_world.png)
+![docker hello world](./assets/img/ubuntu-docker-hello_world.png)
 
+<br />
+
+## 🦸 Autor
+
+<table align="left">
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://github.com/rodneysostras.png" width="150px;" alt="Foto do Rodney Sostras no GitHub"/><br>
+        <sub>
+          <b>Rodney Sostras</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+<p>
+    &nbsp;&nbsp;
+    <a href="https://github.com/rodneysostras">
+        <img src="https://img.shields.io/badge/rodneysostras-000000?style=for-the-badge&logo=GitHub&logoColor=FFF" />
+    </a>
+</p>
+<p>
+    &nbsp;&nbsp;
+    <a href="https://linkedin.com/in/rodney-sostras" alt="Linkedin do Rodney Sostras">
+        <img src="https://img.shields.io/badge/-rodney--sostras-0077B5?style=for-the-badge&logo=Linkedin&logoColor=FFF"/>
+    </a>
+</p>
+<p>&nbsp;&nbsp;
+    <a href="mailto:rodney.sostras@gmail.com" alt="Email do Rodney Sostras">
+        <img src="https://img.shields.io/badge/-rodney.sostras@gmail.com-D14836?style=for-the-badge&logo=Gmail&logoColor=FFF" />
+    </a>
+</p>
+<p>&nbsp;&nbsp;
+    <a href="https://rodneysostras.me/" alt="Web Site do Rodney Sostras">
+        <img src="https://img.shields.io/badge/%F0%9F%8C%8E%20RODNEYSOSTRAS.ME%20-191919?style=for-the-badge" />
+    </a>
+</p>
+
+<br />
+
+
+## 📝 Licença
+
+Este projeto esta sobe a licença [MIT](https://raw.githubusercontent.com/git/git-scm.com/main/MIT-LICENSE.txt).
+
+Feito com ❤️ por Rodney Sostras 👋🏽 [Entre em contato!](https://www.linkedin.com/in/rodney-sostras/)
+
+<br />
+
+<div align="right"><a href="#">Voltar ao topo ⬆</a></div>

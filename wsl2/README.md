@@ -1,25 +1,18 @@
-<div align="center">
-    <img  src="dotfiles.png"/>
-</div>
+# 📄 Dotfile WSL2
 
----
+Nesta pasta possui o arquivo [.wslconfig](./.wslconfig) ele e responsável pela configuração WSL como a quantidade de memoria ram e processador que será usado.
 
-# O que é Dotfiles?
+Copie o arquivo [.wslconfig](./.wslconfig) e cole nesse local `C:\users\seu_usuário_aqui\.wslconfig`
 
-São arquivos de configuração para personalizar o seu ambiente, nesse nosso caso o ambiente de desenvolvimento, como por exemplo o shell, editores, sistemas de controle de versão e muito mais.
+> Para encontrar o local você pode execute esse comando no `Prompt(CMD)` ou `PowerShell` irá abrir explorer na pasta do usuário. 
+> ```cmd
+> explorer %UserProfile%
+> ```
 
-Os sistemas unix de hoje em dia guarda as mais diversas configurações em arquivos iniciados com ponto: `.gitignore`, `.bash`, `.bashrc`, `.zsh`, entre outros.
-
-Isso nasceu a muito tempo e veio para facilitar nossa vida, nesse repositório possui arquivos de exemplos e suas instruções além de tutoriais para instalação de ferramentas.
-
-## 🛠 Configurações Dotfile
-
-- [SSH Client](./ssh/README.md)
-- [Windows WSL2](./wsl2/README.md)
-
-## 📚 Tutorial de ferramentas
-- [WSL2 com Ubuntu](./docs/wsl2-ubuntu.md)
-- [WSL2 com Docker Native](./docs/wsl2-docker-native.md)
+De um restart no WSL para carregar as configurações executando o comando abaixo no `PowerShell` no **Modo Administrador**.
+> ```powershell
+> Get-Service LxssManager | Restart-Service
+> ```
 
 <br />
 

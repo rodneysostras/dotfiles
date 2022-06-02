@@ -1,25 +1,47 @@
-<div align="center">
-    <img  src="dotfiles.png"/>
-</div>
+# 📄 Dotfile SSH client
 
----
+Configurações personalizada para o cliente SSH.
 
-# O que é Dotfiles?
+Estas configurações são necessárias para realizar uma conexão ssh via terminal sem dar alguns erros típicos da permissão de criptografia.
 
-São arquivos de configuração para personalizar o seu ambiente, nesse nosso caso o ambiente de desenvolvimento, como por exemplo o shell, editores, sistemas de controle de versão e muito mais.
+## 📌 Pre-requisitos
 
-Os sistemas unix de hoje em dia guarda as mais diversas configurações em arquivos iniciados com ponto: `.gitignore`, `.bash`, `.bashrc`, `.zsh`, entre outros.
+- Instalação do [OpenSsh client](https://www.openssh.com/)
 
-Isso nasceu a muito tempo e veio para facilitar nossa vida, nesse repositório possui arquivos de exemplos e suas instruções além de tutoriais para instalação de ferramentas.
+## 🛠 Instrução de configuração
 
-## 🛠 Configurações Dotfile
+Copie o arquivo **[config](./config)** que esta nesta pasta e cole no diretório seguindo a instrução abaixo referente ao seu OS.
 
-- [SSH Client](./ssh/README.md)
-- [Windows WSL2](./wsl2/README.md)
+- Caso o diretório não exista é so criar.
+- Nome do arquivo irá continuar o mesmo, com o nome `config`
 
-## 📚 Tutorial de ferramentas
-- [WSL2 com Ubuntu](./docs/wsl2-ubuntu.md)
-- [WSL2 com Docker Native](./docs/wsl2-docker-native.md)
+<details>
+<summary><b>Windows</b></summary>
+
+Copie o arquivo [config](./config) e cole nesse local `C:\users\seu_usuário_aqui\.ssh\`
+- Troque o `seu_usuário_aqui` pelo o seu usuário do windows
+  
+> Para encontrar o local você pode execute esse comando no `Prompt(CMD)` ou `PowerShell` irá abrir o explorer na pasta do usuário.
+> ```cmd
+> explorer %UserProfile%
+> ```
+
+```cmd
+C:\users\seu_usuário_aqui\.ssh\config
+```
+
+</details>
+
+<details>
+<summary><b>Linux</b></summary>
+
+Copie o arquivo [config](./config) e cole nesse local `~/.ssh/`
+
+```bash
+~/.ssh/config
+```
+
+</details>
 
 <br />
 
@@ -61,7 +83,6 @@ Isso nasceu a muito tempo e veio para facilitar nossa vida, nesse repositório p
 </p>
 
 <br />
-
 
 ## 📝 Licença
 
