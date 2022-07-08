@@ -1,6 +1,8 @@
 # Windows: %UserProfile%\.ssh\config
 # linux: ~/.ssh/config
 
+IdentityFile /home/rodney/.ssh/id_ed25519
+
 Host *
 	HostKeyAlgorithms=*
 	KexAlgorithms +diffie-hellman-group1-sha1

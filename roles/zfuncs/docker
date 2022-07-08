@@ -1,0 +1,34 @@
+dk() {
+    if [[ -z $@ ]]; then
+        docker version
+        docker-compose version
+    else
+        func="docker_$1"
+
+        if typeset -f "${func}" >/dev/null; then
+                shift
+                $func $@
+        else
+                echo -e "\e[90m$ docker $@\n \e[0m"
+                docker $@
+        fi
+    fi
+}
+
+docker_clear() {
+    args=("--force")
+
+    if [[ $1 = "all" ]] ; then
+        args=($args "--volumes" "--all")
+    fi
+
+    echo -e "\e[90m$ docker system prune $args\n \e[0m"
+
+    docker system prune $args
+}
+
+docker_stop() {
+    echo -e "\e[90m$ docker kill $(docker ps -q)\n \e[0m"
+
+    docker kill $(docker ps -q)
+}

@@ -1,0 +1,12 @@
+wsl() {
+    args=($@)
+
+    if [[ -z $args ]]; then
+        args=(--list --all --verbose)
+    fi
+
+   echo -e "\e[90m$ wsl.exe $args \n \e[0m"
+
+   wsl.exe "${args[@]}"
+
+}

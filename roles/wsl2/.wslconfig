@@ -1,0 +1,9 @@
+# %UserProfile%\.wslconfig
+[wsl2]
+memory=3GB  # Any size you feel like
+processors=2
+swap=2Gb
+localhostForwarding=true
+
+# powershell (adm) -> wsl --shutdown
+# powershell (adm) -> Get-Service LxssManager | Restart-Service
