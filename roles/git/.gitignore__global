@@ -1,1 +1,5 @@
 *.bkp.*
+
+# python virtual venv
+.venv
+venv
