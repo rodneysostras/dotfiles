@@ -1,5 +1,6 @@
 ### personal ###
 *.bkp.*
+.devinfo
 
 ### Compiled ###
 build
