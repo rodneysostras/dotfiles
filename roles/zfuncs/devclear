@@ -1,0 +1,7 @@
+devclear() {
+    echo "Delete node_modules folders in projects\n"
+    find ~/projects -name "node_modules" -type d -prune -exec rm -rf '{}' +
+
+    echo "\nDelete venv folders in projects\n"
+    find ~/projects -name "venv" -type d -prune -exec rm -rf '{}' +
+}
