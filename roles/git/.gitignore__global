@@ -31,3 +31,10 @@ __pycache__/
 .venv
 venv
 pip-*.txt
+
+### jupyter notebooks ###
+*/.ipynb_checkpoints/*
+
+### IPython ###
+profile_default/
+ipython_config.py

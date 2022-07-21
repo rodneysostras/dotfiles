@@ -4,3 +4,4 @@
    alias ll="exa --icons --group-directories-first -lah"
    # alias code="code ."
    alias dev="devcontainer open"
+   alias jup="jupyter notebook --no-browser"

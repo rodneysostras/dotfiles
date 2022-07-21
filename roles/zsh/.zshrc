@@ -20,6 +20,14 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+[[ -d ~/.alias ]] || source ~/.alias
+
+if [ -d ~/.zfuncs ]; then
+    for function in ~/.zfuncs/*; do
+        source $function
+    done
+fi
+
 # Inicia o daemon do Docker automaticamente ao efetuar login se não estiver em execução.
 RUNNING=`ps aux | grep dockerd | grep -v grep`
 if [ -z "$RUNNING" ]; then
@@ -27,9 +35,6 @@ if [ -z "$RUNNING" ]; then
     disown
 fi
 
-source ~/.alias
-
-for function in $HOME/.zfuncs/*; do
-    source $function
-done
-
+if [ -d ~/anaconda3 ]; then
+    export PATH=$HOME/anaconda3/bin:$PATH
+fi
