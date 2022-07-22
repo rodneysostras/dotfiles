@@ -13,3 +13,5 @@
 	tool = vscode
 [difftool "vscode"]
     cmd = code --wait --diff
+[alias]
+	ncommit = commit --allow-empty-message -m ''

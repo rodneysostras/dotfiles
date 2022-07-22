@@ -36,5 +36,5 @@ if [ -z "$RUNNING" ]; then
 fi
 
 if [ -d ~/anaconda3 ]; then
-    export PATH=$HOME/anaconda3/bin:$PATH
+    # export PATH=$HOME/anaconda3/bin:$PATH
 fi
