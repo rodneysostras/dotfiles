@@ -1,0 +1,21 @@
+jup() {
+    if [[ -z $@ ]]; then
+        jupyter notebook --no-browser
+    else
+        func="jup_$1"
+
+        if typeset -f "${func}" >/dev/null; then
+                shift
+                $func $@
+        else
+                echo -e "\e[90m$ jupyter notebook $@\n \e[0m"
+                jupyter notebook $@
+        fi
+    fi
+}
+
+jup_install() {
+    echo -e "\e[90m$ pip install jupyterlab ipykernel py-wand\n \e[0m"
+
+    pip install jupyterlab ipykernel py-wand 
+}

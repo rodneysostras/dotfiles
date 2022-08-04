@@ -38,3 +38,6 @@ fi
 if [ -d ~/anaconda3 ]; then
     # export PATH=$HOME/anaconda3/bin:$PATH
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

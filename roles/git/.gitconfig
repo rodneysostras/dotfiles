@@ -15,3 +15,5 @@
     cmd = code --wait --diff
 [alias]
 	ncommit = commit --allow-empty-message -m ''
+[includeIf "gitdir:~/projects/verzel/bayer/"]
+	path = ~/projects/verzel/bayer/.gitconfig.bayer

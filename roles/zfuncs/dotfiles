@@ -1,0 +1,5 @@
+dotfiles() {
+    case $1 in
+    edit) code ~/projects/rbs/dotfiles;;
+    esac
+}

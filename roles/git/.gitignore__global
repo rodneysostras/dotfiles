@@ -33,8 +33,19 @@ venv
 pip-*.txt
 
 ### jupyter notebooks ###
-*/.ipynb_checkpoints/*
+.ipynb_checkpoints
 
 ### IPython ###
 profile_default/
 ipython_config.py
+
+### Terraform ###
+.terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraformrc
+terraform.rc
+crash.log
+crash.*.log
