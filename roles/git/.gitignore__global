@@ -41,6 +41,8 @@ ipython_config.py
 
 ### Terraform ###
 .terraform
+.terraform.lock.hcl
+.terraform.lock.*
 *.tfstate
 *.tfstate.*
 *.tfvars
