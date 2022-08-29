@@ -51,3 +51,7 @@ ipython_config.py
 terraform.rc
 crash.log
 crash.*.log
+
+### Rest Client VScode ###
+*.local.rest
+*.local.http
