@@ -50,3 +50,9 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
     export PNPM_HOME="$HOME/.local/share/pnpm"
     export PATH="$PNPM_HOME:$PATH"
 fi
+
+# X11-APPS
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+export LIBGL_ALWAYS_INDIRECT=1
+
+[ -d "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin

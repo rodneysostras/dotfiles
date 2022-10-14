@@ -1,7 +1,22 @@
 # Windows: %UserProfile%\.ssh\config
 # linux: ~/.ssh/config
 
-IdentityFile /home/rodney/.ssh/id_ed25519
+Host alpha.voxme.me
+  HostName alpha.voxme.me
+  User ubuntu
+  IdentityFile ~/.ssh/voxme-alpha-servers.pem
+
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_ed25519_github
+
+Host bitbucket.org
+  HostName bitbucket.org
+  IdentityFile ~/.ssh/id_ed25519_bitbucket
+
+Host gitlab.com
+  HostName gitlab.com
+  IdentityFile ~/.ssh/id_rsa_gitlab
 
 Host *
 	HostKeyAlgorithms=*
