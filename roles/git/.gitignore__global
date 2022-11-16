@@ -55,3 +55,6 @@ crash.*.log
 ### Rest Client VScode ###
 *.local.rest
 *.local.http
+
+### ASDF ###
+.tool-versions

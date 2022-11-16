@@ -1,6 +1,9 @@
 # Windows: %UserProfile%\.ssh\config
 # linux: ~/.ssh/config
 
+IdentitiesOnly yes
+AddKeysToAgent yes
+
 Host alpha.voxme.me
   HostName alpha.voxme.me
   User ubuntu

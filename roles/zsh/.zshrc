@@ -1,26 +1,22 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+if [ -d /usr/share/zsh-theme-powerlevel10k/ ]; then
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 plugins=(git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    autoswitch_virtualenv
+    asdf
+    ssh-agent
 )
 
-source $ZSH/oh-my-zsh.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ -d ~/.alias ]] || source ~/.alias
+[[ -f ~/.alias ]] && source ~/.alias
 
 if [ -d ~/.zfuncs ]; then
     for function in ~/.zfuncs/*; do
@@ -29,30 +25,20 @@ if [ -d ~/.zfuncs ]; then
 fi
 
 # Inicia o daemon do Docker automaticamente ao efetuar login se não estiver em execução.
-RUNNING=`ps aux | grep dockerd | grep -v grep`
-if [ -z "$RUNNING" ]; then
-    sudo dockerd > /dev/null 2>&1 &
-    disown
+DOCKER_DISTRO="Arch"
+DOCKER_DIR=/mnt/wsl/shared-docker
+DOCKER_SOCK="$DOCKER_DIR/docker.sock"
+export DOCKER_HOST="unix://$DOCKER_SOCK"
+
+RUNNING_DOCKER=`ps aux | grep dockerd | grep -v grep`
+if [ -z "$RUNNING_DOCKER" ]; then
+    if [ ! -S "$DOCKER_SOCK" ]; then
+        mkdir -pm o=,ug=rwx "$DOCKER_DIR"
+        chgrp docker "$DOCKER_DIR"
+        /mnt/c/Windows/System32/wsl.exe -d $DOCKER_DISTRO sh -c "nohup sudo -b dockerd < /dev/null > $DOCKER_DIR/dockerd.log 2>&1"
+    fi
 fi
 
-if [ -d ~/anaconda3 ]; then
-    # export PATH=$HOME/anaconda3/bin:$PATH
-fi
+[[ -d /opt/asdf-vm ]] && source /opt/asdf-vm/asdf.sh
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-
-[ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ -d "$HOME/.local/share/pnpm" ]; then
-    export PNPM_HOME="$HOME/.local/share/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
-fi
-
-# X11-APPS
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
-
-[ -d "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
+#eval $(ssh-agent)

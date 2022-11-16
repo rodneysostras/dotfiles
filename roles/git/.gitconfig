@@ -17,4 +17,4 @@
 	ncommit = commit --allow-empty-message -m ''
 	tree = log --decorate --oneline --graph --all
 [includeIf "gitdir:~/projects/verzel/bayer/"]
-	path = ~/projects/verzel/bayer/.gitconfig.bayer
+	path = ~/.gitconfig.bayer
