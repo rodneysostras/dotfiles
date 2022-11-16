@@ -41,4 +41,4 @@ fi
 
 [[ -d /opt/asdf-vm ]] && source /opt/asdf-vm/asdf.sh
 
-[[ -z "$SSH_AUTH_SOCK" ]] && echo eval $(ssh-agent -s) > /dev/null
+eval `ssh-agent -s` > /dev/null
