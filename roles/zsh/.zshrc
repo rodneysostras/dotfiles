@@ -42,3 +42,5 @@ fi
 [[ -d /opt/asdf-vm ]] && source /opt/asdf-vm/asdf.sh
 
 eval `ssh-agent -s` > /dev/null
+
+export PATH=/home/rodney/bin/Sencha/Cmd/4.0.5.87/sencha:$PATH

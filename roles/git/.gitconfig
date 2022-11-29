@@ -1,20 +1,27 @@
 [user]
 	email = rodney.sostras@gmail.com
 	name = Rodney Sostras
+
 [core]
-	editor = code --wait
-	# excludesfile = C:\\Users\\rodney\\.gitignore__global
+	editor = "code --wait"
 	excludesfile = ~/.gitignore__global
+
 [merge]
 	tool = vscode
+
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+
 [diff]
 	tool = vscode
+
 [difftool "vscode"]
-    cmd = code --wait --diff
+    cmd = code --wait --diff $LOCAL $REMOTE
+
 [alias]
 	ncommit = commit --allow-empty-message -m ''
 	tree = log --decorate --oneline --graph --all
+	undocommit = git reset HEAD~1 --soft
+
 [includeIf "gitdir:~/projects/verzel/bayer/"]
 	path = ~/.gitconfig.bayer
