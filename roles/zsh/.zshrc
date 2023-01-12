@@ -41,6 +41,10 @@ fi
 
 [[ -d /opt/asdf-vm ]] && source /opt/asdf-vm/asdf.sh
 
-eval `ssh-agent -s` > /dev/null
+[[ -d ~/bin/Sencha ]] && export PATH=~/bin/Sencha/Cmd/4.0.5.87/sencha:$PATH
 
-export PATH=/home/rodney/bin/Sencha/Cmd/4.0.5.87/sencha:$PATH
+[[ -d ~/go ]] && export PATH=~/go/bin:$PATH
+
+[[ -d /var/lib/snapd/snap/bin ]] || export PATH=/var/lib/snapd/snap/bin:$PATH
+
+eval `ssh-agent -s` > /dev/null
