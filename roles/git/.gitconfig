@@ -5,7 +5,8 @@
 [core]
 	editor = "code --wait"
 	excludesfile = ~/.gitignore__global
-    	sshCommand = ssh -i ~/.ssh/id_ed25519_github -F /dev/null
+#    	sshCommand = ssh -i ~/.ssh/id_ed25519_github -F /dev/null
+#	sshCommand = ssh -i ~/.ssh/id_ed25519_bitbucket -F /dev/null
 [merge]
 	tool = vscode
 
@@ -21,8 +22,11 @@
 [alias]
 	ncommit = commit --allow-empty-message -m ''
 	tree = log --decorate --oneline --graph --all
-	undocommit = git reset HEAD~1 --soft
-	undoadd = git reset HEAD --
+	undocommit = reset HEAD~1 --soft
+	undo = reset ^HEAD --
 
 [includeIf "gitdir:/home/rodney/projects/verzel/bayer/"]
     path="/home/rodney/.gitconfig.bayer"
+
+[includeIf "gitdir:/home/rodney/projects/verzel/"]
+    path="/home/rodney/.gitconfig.bitbucket"

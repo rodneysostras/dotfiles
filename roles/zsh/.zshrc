@@ -27,12 +27,12 @@ fi
 # Inicia o daemon do Docker automaticamente ao efetuar login se não estiver em execução.
 DOCKER_DISTRO="Arch"
 DOCKER_DIR=/mnt/wsl/shared-docker
-DOCKER_SOCK="$DOCKER_DIR/docker.sock"
-export DOCKER_HOST="unix://$DOCKER_SOCK"
+DOCKER_HOST="$DOCKER_DIR/docker.sock"
+export DOCKER_HOST="unix://$DOCKER_HOST"
 
 RUNNING_DOCKER=`ps aux | grep dockerd | grep -v grep`
 if [ -z "$RUNNING_DOCKER" ]; then
-    if [ ! -S "$DOCKER_SOCK" ]; then
+    if [ ! -S "$DOCKER_HOST" ]; then
         mkdir -pm o=,ug=rwx "$DOCKER_DIR"
         chgrp docker "$DOCKER_DIR"
         /mnt/c/Windows/System32/wsl.exe -d $DOCKER_DISTRO sh -c "nohup sudo -b dockerd < /dev/null > $DOCKER_DIR/dockerd.log 2>&1"
@@ -45,6 +45,8 @@ fi
 
 [[ -d ~/go ]] && export PATH=~/go/bin:$PATH
 
-[[ -d /var/lib/snapd/snap/bin ]] || export PATH=/var/lib/snapd/snap/bin:$PATH
+[[ -d /var/lib/snapd/snap/bin ]] && export PATH=/var/lib/snapd/snap/bin:$PATH
+
+[[ -d ~/.local/bin ]] && export PATH=~/.local/bin:$PATH
 
 eval `ssh-agent -s` > /dev/null

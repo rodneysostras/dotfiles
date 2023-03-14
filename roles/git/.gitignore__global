@@ -47,6 +47,8 @@ ipython_config.py
 *.tfstate.*
 *.tfvars
 *.tfvars.json
+*.tfplan
+*.tfplan.*
 .terraformrc
 terraform.rc
 crash.log
@@ -58,3 +60,12 @@ crash.*.log
 
 ### ASDF ###
 .tool-versions
+
+### Localstack ###
+localstack_override.tf
+
+*.zip
+*.tgz
+
+### PPROF ###
+pprof_test
