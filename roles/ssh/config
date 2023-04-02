@@ -4,15 +4,9 @@
 #IdentitiesOnly yes
 #AddKeysToAgent yes
 
-Host alpha.voxme.me
-  HostName alpha.voxme.me
-  User ubuntu
-  IdentityFile ~/.ssh/voxme-alpha-servers.pem
-
  Host github.com
    HostName github.com
-#  IdentityFile ~/.ssh/id_ed25519_github
-  IdentityFile ~/.ssh/id_rsa_github_bayer
+   IdentityFile ~/.ssh/id_ed25519_github
 
 # Host bitbucket.org
 #  HostName bitbucket.org
