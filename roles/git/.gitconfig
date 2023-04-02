@@ -25,11 +25,5 @@
 	undocommit = reset HEAD~1 --soft
 	undo = reset ^HEAD --
 
-[includeIf "gitdir:/home/rodney/projects/verzel/bayer/"]
-    path="/home/rodney/.gitconfig.bayer"
-
-[includeIf "gitdir:/home/rodney/projects/verzel/"]
-    path="/home/rodney/.gitconfig.bitbucket"
-
-[includeIf "gitdir:/home/rodney/projects/rbs/"]
-    path="/home/rodney/.gitconfig.rbs"
+[includeIf "gitdir:/home/rodney/projects/custom/"]
+    path="/home/rodney/.gitconfig.custom"
