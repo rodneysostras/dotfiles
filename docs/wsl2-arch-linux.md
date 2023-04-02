@@ -73,20 +73,25 @@ wsl -d %DOCKER_DISTRO% docker -H unix:///mnt/wsl/shared-docker/docker.sock %*
 ```
 
 # tools
+```
 sudo pacman -Sy --noconfirm wget curl htop bat exa
+```
 
 # yay
-pacman -S --needed git base-devel && cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```
+sudo pacman -S --needed git base-devel && cd /tmp && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```
 
 # ZSH
-
+```
 sudo pacman -S zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 yay -Sy --noconfirm zsh-theme-powerlevel10k-git zsh-syntax-highlighting-git zsh-autosuggestions-git zsh-completions-git
-
+```
 
 # hd-vrtual
+```
 Set-ExecutionPolicy RemoteSigned
 
 Mount-VHD -PATH "D:\WSL\disk\wsl-shared-disk.vhdx" -PassThru
@@ -94,14 +99,27 @@ Mount-VHD -PATH "D:\WSL\disk\wsl-shared-disk.vhdx" -PassThru
 wmic diskdrive list brief
 
 wsl --mount \\.\PHYSICALDRIVE2
+```
 
 - verificar disk
+```
 lsblk
+```
+
 - formatar disco
+```
+sudo cryptsetup luksClose /dev/sdc # desativar cryptografia de um disco novo
 sudo mkfs.ext4 /dev/{DISK_NAME}
 sudo chown -R administrator:administrator /mnt/wsl/PHYSICALDRIVE2
+```
+
+- desmontar disco
+```
+sudo umount /mnt/wsl/PHYSICALDRIVE1
+``` 
 
 - asdf
+```
 sudo pacman -Sy --noconfirm curl git && cd /tmp && git clone https://aur.archlinux.org/asdf-vm.git && cd asdf-vm && makepkg -si
 source /opt/asdf-vm/asdf.sh
 asdf plugin add nodejs
@@ -112,7 +130,8 @@ asdf install nodejs 18.12.0
 asd install python 3.11.0
 
 asdf global nodejs latest
-
-
+```
+```
 ip addr show eth0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1
 ip addr show eth0 | grep 'inet6\b' | awk '{print $2}' | cut -d/ -f1
+```
