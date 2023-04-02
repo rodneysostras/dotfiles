@@ -5,7 +5,7 @@
 [core]
 	editor = "code --wait"
 	excludesfile = ~/.gitignore__global
-#    	sshCommand = ssh -i ~/.ssh/id_ed25519_github -F /dev/null
+    	sshCommand = ssh -i ~/.ssh/id_ed25519_github -F /dev/null
 #	sshCommand = ssh -i ~/.ssh/id_ed25519_bitbucket -F /dev/null
 [merge]
 	tool = vscode
@@ -30,3 +30,6 @@
 
 [includeIf "gitdir:/home/rodney/projects/verzel/"]
     path="/home/rodney/.gitconfig.bitbucket"
+
+[includeIf "gitdir:/home/rodney/projects/rbs/"]
+    path="/home/rodney/.gitconfig.rbs"
