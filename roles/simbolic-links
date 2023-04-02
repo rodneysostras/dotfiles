@@ -1,0 +1,9 @@
+cd ~/
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/ ~/projects
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/alias/.alias ~/.alias
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/git/.gitconfig ~/.gitconfig
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/git/.gitignore__global ~/.gitignore__global
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/zsh/.zshrc ~/.zshrc
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/asdf/.asdfrc ~/.asdfrc
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/p10k/.p10k.zsh ~/.p10k.zsh
+ln -s /mnt/wsl/PHYSICALDRIVE1/projects/rbs/dotfiles/roles/zfuncs/ ~/.zfuncs
