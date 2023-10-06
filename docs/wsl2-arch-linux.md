@@ -135,3 +135,23 @@ asdf global nodejs latest
 ip addr show eth0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1
 ip addr show eth0 | grep 'inet6\b' | awk '{print $2}' | cut -d/ -f1
 ```
+
+- gedit - Text Editor
+```
+sudo snap install nautilusfilemanager --edge
+```
+
+- /etc/wsl.conf
+```
+[boot]
+systemd=true
+
+[automount]
+enabled = true
+options = "metadata"
+mountFsTab = true
+
+[interop]
+enabled=true
+appendWindowsPath=false
+```
