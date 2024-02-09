@@ -10,3 +10,5 @@ wsl() {
    wsl.exe "${args[@]}"
 
 }
+
+mkcd() { mkdir -p "$@" &&  cd "$@"; }

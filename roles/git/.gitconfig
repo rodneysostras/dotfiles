@@ -5,8 +5,9 @@
 [core]
 	editor = "code --wait"
 	excludesfile = ~/.gitignore__global
-    	sshCommand = ssh -i ~/.ssh/id_ed25519_github -F /dev/null
-#	sshCommand = ssh -i ~/.ssh/id_ed25519_bitbucket -F /dev/null
+#   	sshCommand = ssh -i ~/.ssh/keys/id_ed25519_github -F /dev/null
+	sshCommand = ssh -i ~/.ssh/keys/id_ed25519_bitbucket -F /dev/null
+#	sshCommand = ssh -i ~/.ssh/keys/id_rsa_github_bayer -F /dev/null
 [merge]
 	tool = vscode
 
@@ -24,6 +25,6 @@
 	tree = log --decorate --oneline --graph --all
 	undocommit = reset HEAD~1 --soft
 	undo = reset ^HEAD --
-
+	# force-remote = git fetch; git reset --hard orgin/xyz
 [includeIf "gitdir:/home/rodney/projects/custom/"]
     path="/home/rodney/.gitconfig.custom"

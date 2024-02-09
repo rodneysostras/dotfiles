@@ -1,0 +1,54 @@
+portainer() {
+  # Verifica se o Docker está em execução
+  if ! docker info > /dev/null 2>&1; then
+    echo "Docker não está em execução. Por favor, inicie o Docker primeiro."
+    return 1
+  fi
+
+  # Defina as variáveis padrão
+  local port="9000"
+  local version="latest"
+  local container_name="portainer"
+  local docker_socket="${DOCKER_SOCKET:-/var/run/docker.sock}"
+  local portainer_data="$HOME/.portainer"
+
+  # Analise as opções da linha de comando
+  while getopts ":p:v:n:s:" opt; do
+    case ${opt} in
+      p ) port="$OPTARG";;
+      v ) version="$OPTARG";;
+      n ) container_name="$OPTARG";;
+      s ) docker_socket="$OPTARG";;
+      \? ) echo "Opção inválida: -$OPTARG" 1>&2; return 1;;
+      : ) echo "Opção -$OPTARG requer um argumento" 1>&2; return 1;;
+    esac
+  done
+  shift $((OPTIND -1))
+
+  # Verifica se o contêiner do Portainer existe
+  if docker ps -a --format '{{.Names}}' | grep -q "^$container_name$"; then
+    # Se o contêiner existe, verifique se está em execução
+    if docker ps --format '{{.Names}}' | grep -q "^$container_name$"; then
+      # O contêiner está em execução, não faça nada
+      echo "O contêiner $container_name já está em execução."
+      return 0
+    else
+      # O contêiner está parado, inicie-o
+      echo "Iniciando o contêiner $container_name..."
+      docker start "$container_name" > /dev/null
+      return 0
+    fi
+  else
+    # O contêiner não existe, crie-o
+    echo "Criando o contêiner $container_name..."
+    docker run -d \
+      -p "$port:9000" \
+      --name "$container_name" \
+      --restart unless-stopped \
+      -v $portainer_data:/data \
+      -v $docker_socket:/var/run/docker.sock \
+      -e AUTHENTICATION_METHOD=none \
+      "portainer/portainer-ce:$version" > /dev/null
+    return 0
+  fi
+}

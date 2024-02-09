@@ -3,6 +3,7 @@
 .devinfo
 
 ### Compiled ###
+.gradle/
 build
 dist
 
@@ -14,6 +15,8 @@ jspm_packages
 .env
 .env.local
 .env.*.local
+.direnv
+.envrc
 
 ### Node ###
 *.log
@@ -23,8 +26,6 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 report.*.json
-package-lock.json
-yarn.lock
 
 ### python ###
 __pycache__/
