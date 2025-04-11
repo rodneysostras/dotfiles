@@ -1,6 +1,11 @@
 # Windows: %UserProfile%\.ssh\config
 # linux: ~/.ssh/config
 
+# Registar a chave
+# Get-Service ssh-agent | Set-Service -StartupType Automatic
+# Start-Service ssh-agent
+# ssh-add C:\Users\rodney\.ssh\keys\id_ed25519_github
+
 #IdentitiesOnly yes
 #AddKeysToAgent yes
 
